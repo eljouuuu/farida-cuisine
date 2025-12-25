@@ -30,13 +30,37 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState<"left" | "right" | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const nextTestimonial = () => {
-    setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    if (isAnimating) return;
+    setDirection("right");
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      setIsAnimating(false);
+    }, 300);
   };
 
   const prevTestimonial = () => {
-    setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    if (isAnimating) return;
+    setDirection("left");
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+      setIsAnimating(false);
+    }, 300);
+  };
+
+  const handleDotClick = (index: number) => {
+    if (isAnimating || index === currentIndex) return;
+    setDirection(index > currentIndex ? "right" : "left");
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentIndex(index);
+      setIsAnimating(false);
+    }, 300);
   };
 
   return (
@@ -61,12 +85,20 @@ const TestimonialsSection = () => {
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-card rounded-sm p-8 md:p-12 shadow-elegant">
+          <div className="relative bg-card rounded-lg p-8 md:p-12 shadow-elegant overflow-hidden">
             {/* Quote Icon */}
             <Quote className="absolute top-8 right-8 w-16 h-16 text-primary/20" />
 
-            {/* Content */}
-            <div className="relative z-10">
+            {/* Content with animation */}
+            <div 
+              className={`relative z-10 transition-all duration-300 ease-out ${
+                isAnimating 
+                  ? direction === "right" 
+                    ? "opacity-0 -translate-x-8" 
+                    : "opacity-0 translate-x-8"
+                  : "opacity-100 translate-x-0"
+              }`}
+            >
               {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {[...Array(testimonials[currentIndex].rating)].map((_, i) => (
@@ -80,32 +112,30 @@ const TestimonialsSection = () => {
               </blockquote>
 
               {/* Author */}
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-foreground font-medium">
-                    {testimonials[currentIndex].author}
-                  </p>
-                  <p className="text-cream-muted text-sm">
-                    {testimonials[currentIndex].role}
-                  </p>
-                </div>
-
-                {/* Navigation */}
-                <div className="flex gap-2">
-                  <button 
-                    onClick={prevTestimonial}
-                    className="w-10 h-10 rounded-sm border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-                  >
-                    <ChevronLeft className="w-5 h-5" />
-                  </button>
-                  <button 
-                    onClick={nextTestimonial}
-                    className="w-10 h-10 rounded-sm border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-colors"
-                  >
-                    <ChevronRight className="w-5 h-5" />
-                  </button>
-                </div>
+              <div>
+                <p className="text-foreground font-medium">
+                  {testimonials[currentIndex].author}
+                </p>
+                <p className="text-cream-muted text-sm">
+                  {testimonials[currentIndex].role}
+                </p>
               </div>
+            </div>
+
+            {/* Navigation */}
+            <div className="flex gap-2 absolute bottom-8 right-8 md:bottom-12 md:right-12">
+              <button 
+                onClick={prevTestimonial}
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button 
+                onClick={nextTestimonial}
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
             </div>
           </div>
 
@@ -114,11 +144,11 @@ const TestimonialsSection = () => {
             {testimonials.map((_, index) => (
               <button
                 key={index}
-                onClick={() => setCurrentIndex(index)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                onClick={() => handleDotClick(index)}
+                className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex 
                     ? "bg-primary w-8" 
-                    : "bg-muted hover:bg-muted-foreground"
+                    : "bg-muted w-2 hover:bg-muted-foreground"
                 }`}
               />
             ))}
