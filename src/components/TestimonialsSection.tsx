@@ -123,16 +123,18 @@ const TestimonialsSection = () => {
             </div>
 
             {/* Navigation */}
-            <div className="flex gap-2 absolute bottom-8 right-8 md:bottom-12 md:right-12">
+            <div className="flex gap-2 absolute bottom-8 right-8 md:bottom-12 md:right-12 z-20">
               <button 
+                type="button"
                 onClick={prevTestimonial}
-                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background/50 backdrop-blur-sm"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button 
+                type="button"
                 onClick={nextTestimonial}
-                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background/50 backdrop-blur-sm"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
