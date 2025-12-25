@@ -1,7 +1,7 @@
 import { Phone, MapPin, Clock, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 const Navigation = () => {
-  return <nav className="fixed top-0 left-5 right-5 z-50 bg-background/80 backdrop-blur-md border-b border-border/50 rounded-lg">
+  return <nav className="fixed top-0 left-5 right-5 z-50 bg-background/100 backdrop-blur-md border-b border-border/50 op">
       <div className="container mx-auto px-6 ">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
