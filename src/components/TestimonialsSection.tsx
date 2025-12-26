@@ -64,10 +64,10 @@ const TestimonialsSection = () => {
   };
 
   return (
-    <section id="testimonials" className="py-24 bg-gradient-to-b from-charcoal-light to-background relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-background relative overflow-hidden">
       {/* Decorative Elements */}
       <div className="absolute top-20 left-10 w-64 h-64 bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
+      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary rounded-full blur-3xl" />
 
       <div className="container mx-auto px-6 relative z-10">
         {/* Section Header */}
@@ -78,16 +78,16 @@ const TestimonialsSection = () => {
           <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
             Words From Our Guests
           </h2>
-          <p className="text-cream-muted max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Hundreds of 5-star experiences. Loved by locals, expats, and visitors alike.
           </p>
         </div>
 
         {/* Testimonial Carousel */}
         <div className="max-w-4xl mx-auto">
-          <div className="relative bg-card rounded-lg p-8 md:p-12 shadow-elegant overflow-hidden">
+          <div className="relative bg-card rounded-xl p-8 md:p-12 shadow-elegant border border-border overflow-hidden">
             {/* Quote Icon */}
-            <Quote className="absolute top-8 right-8 w-16 h-16 text-primary/20" />
+            <Quote className="absolute top-8 right-8 w-16 h-16 text-primary/15" />
 
             {/* Content with animation */}
             <div 
@@ -116,7 +116,7 @@ const TestimonialsSection = () => {
                 <p className="text-foreground font-medium">
                   {testimonials[currentIndex].author}
                 </p>
-                <p className="text-cream-muted text-sm">
+                <p className="text-muted-foreground text-sm">
                   {testimonials[currentIndex].role}
                 </p>
               </div>
@@ -127,14 +127,14 @@ const TestimonialsSection = () => {
               <button 
                 type="button"
                 onClick={prevTestimonial}
-                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background/50 backdrop-blur-sm"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background"
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
               <button 
                 type="button"
                 onClick={nextTestimonial}
-                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background/50 backdrop-blur-sm"
+                className="w-10 h-10 rounded-lg border border-border flex items-center justify-center hover:border-primary hover:text-primary transition-all duration-200 hover:scale-105 active:scale-95 bg-background"
               >
                 <ChevronRight className="w-5 h-5" />
               </button>
@@ -150,7 +150,7 @@ const TestimonialsSection = () => {
                 className={`h-2 rounded-full transition-all duration-300 ${
                   index === currentIndex 
                     ? "bg-primary w-8" 
-                    : "bg-muted w-2 hover:bg-muted-foreground"
+                    : "bg-border w-2 hover:bg-muted-foreground"
                 }`}
               />
             ))}

@@ -15,10 +15,10 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        // Luxury variants for Farida Lebanon
-        gold: "bg-gold text-primary-foreground font-semibold uppercase tracking-widest hover:bg-gold-dark shadow-lg",
+        // Teal variants for Farida Lebanon
+        gold: "bg-primary text-primary-foreground font-semibold uppercase tracking-widest hover:bg-accent shadow-lg",
         goldOutline: "border-2 border-primary bg-transparent text-primary hover:bg-primary hover:text-primary-foreground uppercase tracking-widest font-semibold",
-        elegant: "bg-charcoal-light border border-gold/30 text-cream hover:border-gold hover:text-gold uppercase tracking-widest",
+        elegant: "bg-secondary border border-primary/20 text-foreground hover:border-primary hover:text-primary uppercase tracking-widest",
       },
       size: {
         default: "h-10 px-4 py-2",
