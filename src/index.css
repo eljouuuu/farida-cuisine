@@ -6,79 +6,101 @@
 
 @layer base {
   :root {
-    /* Luxury Dark Palette */
-    --background: 220 15% 8%;
-    --foreground: 45 20% 92%;
+    /* Clean White & Teal Palette */
+    --background: 0 0% 100%;
+    --foreground: 168 78% 20%;
 
-    --card: 220 12% 12%;
-    --card-foreground: 45 20% 92%;
+    --card: 0 0% 98%;
+    --card-foreground: 168 78% 20%;
 
-    --popover: 220 12% 10%;
-    --popover-foreground: 45 20% 92%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 168 78% 20%;
 
-    /* Gold accent - primary brand color */
-    --primary: 42 65% 55%;
-    --primary-foreground: 220 15% 8%;
+    /* Teal - primary brand color #0f7b6c */
+    --primary: 168 78% 27%;
+    --primary-foreground: 0 0% 100%;
 
-    /* Deep forest green - secondary */
-    --secondary: 160 25% 18%;
-    --secondary-foreground: 45 20% 92%;
+    /* Lighter teal - secondary */
+    --secondary: 168 40% 92%;
+    --secondary-foreground: 168 78% 20%;
 
-    --muted: 220 10% 18%;
-    --muted-foreground: 45 10% 60%;
+    --muted: 168 20% 95%;
+    --muted-foreground: 168 30% 40%;
 
-    /* Accent - warm brass */
-    --accent: 38 45% 45%;
-    --accent-foreground: 45 20% 95%;
+    /* Accent - darker teal */
+    --accent: 168 60% 35%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 45 20% 92%;
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 220 10% 20%;
-    --input: 220 10% 20%;
-    --ring: 42 65% 55%;
+    --border: 168 20% 85%;
+    --input: 168 20% 85%;
+    --ring: 168 78% 27%;
 
     --radius: 0.25rem;
 
-    /* Custom luxury tokens */
-    --gold: 42 65% 55%;
-    --gold-light: 42 55% 70%;
-    --gold-dark: 38 60% 40%;
-    --charcoal: 220 15% 8%;
-    --charcoal-light: 220 12% 14%;
-    --forest: 160 25% 18%;
-    --forest-dark: 160 30% 12%;
-    --cream: 45 20% 92%;
-    --cream-muted: 45 15% 75%;
+    /* Custom tokens - teal palette */
+    --gold: 168 78% 27%;
+    --gold-light: 168 60% 45%;
+    --gold-dark: 168 85% 20%;
+    --charcoal: 168 78% 15%;
+    --charcoal-light: 168 50% 25%;
+    --forest: 168 78% 27%;
+    --forest-dark: 168 85% 20%;
+    --cream: 0 0% 100%;
+    --cream-muted: 168 10% 95%;
 
     /* Gradients */
-    --gradient-gold: linear-gradient(135deg, hsl(42 65% 55%), hsl(38 60% 40%));
-    --gradient-dark: linear-gradient(180deg, hsl(220 15% 8%) 0%, hsl(220 12% 5%) 100%);
-    --gradient-overlay: linear-gradient(180deg, hsla(220, 15%, 8%, 0.3) 0%, hsla(220, 15%, 8%, 0.85) 100%);
-    --gradient-forest: linear-gradient(135deg, hsl(160 25% 18%), hsl(160 30% 12%));
+    --gradient-gold: linear-gradient(135deg, hsl(168 78% 27%), hsl(168 85% 20%));
+    --gradient-dark: linear-gradient(180deg, hsl(168 78% 15%) 0%, hsl(168 85% 10%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(0, 0%, 0%, 0.3) 0%, hsla(0, 0%, 0%, 0.7) 100%);
+    --gradient-forest: linear-gradient(135deg, hsl(168 78% 27%), hsl(168 85% 20%));
 
     /* Shadows */
-    --shadow-gold: 0 0 60px hsla(42, 65%, 55%, 0.15);
-    --shadow-elegant: 0 25px 50px -12px hsla(0, 0%, 0%, 0.5);
+    --shadow-gold: 0 0 60px hsla(168, 78%, 27%, 0.15);
+    --shadow-elegant: 0 25px 50px -12px hsla(0, 0%, 0%, 0.15);
 
     /* Typography */
     --font-display: 'Cormorant Garamond', serif;
     --font-body: 'Outfit', sans-serif;
 
     /* Sidebar defaults */
-    --sidebar-background: 220 12% 10%;
-    --sidebar-foreground: 45 20% 92%;
-    --sidebar-primary: 42 65% 55%;
-    --sidebar-primary-foreground: 220 15% 8%;
-    --sidebar-accent: 160 25% 18%;
-    --sidebar-accent-foreground: 45 20% 92%;
-    --sidebar-border: 220 10% 20%;
-    --sidebar-ring: 42 65% 55%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 168 78% 20%;
+    --sidebar-primary: 168 78% 27%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 168 40% 92%;
+    --sidebar-accent-foreground: 168 78% 20%;
+    --sidebar-border: 168 20% 85%;
+    --sidebar-ring: 168 78% 27%;
   }
 
   .dark {
-    --background: 220 15% 8%;
-    --foreground: 45 20% 92%;
+    /* Dark mode with teal accents */
+    --background: 168 78% 8%;
+    --foreground: 0 0% 98%;
+
+    --card: 168 60% 12%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 168 60% 10%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 168 78% 45%;
+    --primary-foreground: 168 78% 8%;
+
+    --secondary: 168 40% 20%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 168 30% 18%;
+    --muted-foreground: 168 20% 60%;
+
+    --accent: 168 60% 35%;
+    --accent-foreground: 0 0% 98%;
+
+    --border: 168 30% 25%;
+    --input: 168 30% 25%;
   }
 }
 
