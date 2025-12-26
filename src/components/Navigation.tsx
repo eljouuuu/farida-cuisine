@@ -11,33 +11,33 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <a href="#" className="flex flex-col items-start">
-            <span className="font-display text-xl md:text-2xl font-semibold text-foreground tracking-wide">
+            <span className="font-display text-xl md:text-2xl font-semibold text-white tracking-wide drop-shadow-md">
               Farida Lebanon
             </span>
-            <span className="text-[10px] md:text-xs text-primary tracking-[0.2em] md:tracking-[0.3em] uppercase">
+            <span className="text-[10px] md:text-xs text-white/80 tracking-[0.2em] md:tracking-[0.3em] uppercase drop-shadow-md">
               Authentic Lebanese Cuisine
             </span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-8">
-            <a href="#menu" className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase">
+            <a href="#menu" className="text-sm text-white/90 hover:text-white transition-colors tracking-wide uppercase drop-shadow-md">
               Menu
             </a>
-            <a href="#experience" className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase">
+            <a href="#experience" className="text-sm text-white/90 hover:text-white transition-colors tracking-wide uppercase drop-shadow-md">
               Experience
             </a>
-            <a href="#testimonials" className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase">
+            <a href="#testimonials" className="text-sm text-white/90 hover:text-white transition-colors tracking-wide uppercase drop-shadow-md">
               Reviews
             </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-primary transition-colors tracking-wide uppercase">
+            <a href="#contact" className="text-sm text-white/90 hover:text-white transition-colors tracking-wide uppercase drop-shadow-md">
               Contact
             </a>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-4">
-            <a href="tel:+201234567890" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
+            <a href="tel:+201234567890" className="flex items-center gap-2 text-sm text-white/90 hover:text-white transition-colors drop-shadow-md">
               <Phone className="w-4 h-4" />
             </a>
             <Button variant="gold" size="lg">
@@ -48,7 +48,7 @@ const Navigation = () => {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsOpen(!isOpen)} 
-            className="lg:hidden text-foreground p-2"
+            className="lg:hidden text-white p-2 drop-shadow-md"
             aria-label="Toggle menu"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -57,7 +57,7 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isOpen && (
-          <div className="lg:hidden absolute top-16 left-0 right-0 bg-background/95 backdrop-blur-md border-b border-border/50 animate-fade-in">
+          <div className="lg:hidden absolute top-16 left-0 right-0 bg-background/98 backdrop-blur-md border-b border-border animate-fade-in">
             <div className="flex flex-col py-6 px-4 gap-4">
               <a 
                 href="#menu" 
@@ -87,7 +87,7 @@ const Navigation = () => {
               >
                 Contact
               </a>
-              <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+              <div className="flex items-center gap-4 pt-4 border-t border-border">
                 <a href="tel:+201234567890" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
                   <Phone className="w-4 h-4" />
                   <span>Call Us</span>

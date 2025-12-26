@@ -28,7 +28,7 @@ const dishes = [
 
 const SignatureDishes = () => {
   return (
-    <section id="menu" className="py-24 bg-gradient-to-b from-background to-charcoal-light">
+    <section id="menu" className="py-24 bg-background">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16">
@@ -38,7 +38,7 @@ const SignatureDishes = () => {
           <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
             Dishes That Define Us
           </h2>
-          <p className="text-cream-muted max-w-2xl mx-auto text-lg">
+          <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Fresh, bold flavors. Perfectly balanced. Beautifully plated. 
             Each dish tells a story of Lebanese tradition.
           </p>
@@ -49,7 +49,7 @@ const SignatureDishes = () => {
           {dishes.map((dish, index) => (
             <div 
               key={dish.name}
-              className="group relative overflow-hidden bg-card rounded-sm opacity-0 animate-fade-up"
+              className="group relative overflow-hidden bg-card rounded-lg border border-border opacity-0 animate-fade-up"
               style={{ animationDelay: `${index * 100 + 200}ms`, animationFillMode: 'forwards' }}
             >
               {/* Image */}
@@ -62,19 +62,19 @@ const SignatureDishes = () => {
               </div>
               
               {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                <h3 className="font-display text-2xl text-foreground mb-2">
+                <h3 className="font-display text-2xl text-white mb-2">
                   {dish.name}
                 </h3>
-                <p className="text-cream-muted text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                <p className="text-white/80 text-sm leading-relaxed opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                   {dish.description}
                 </p>
               </div>
 
-              {/* Gold accent line */}
+              {/* Teal accent line */}
               <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             </div>
           ))}
@@ -84,7 +84,7 @@ const SignatureDishes = () => {
         <div className="text-center mt-16">
           <a 
             href="#" 
-            className="inline-flex items-center gap-2 text-primary hover:text-gold-light transition-colors uppercase tracking-widest text-sm font-medium group"
+            className="inline-flex items-center gap-2 text-primary hover:text-accent transition-colors uppercase tracking-widest text-sm font-medium group"
           >
             Explore Full Menu
             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">

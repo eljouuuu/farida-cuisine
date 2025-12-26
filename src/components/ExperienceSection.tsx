@@ -26,12 +26,12 @@ const features = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="py-24 bg-charcoal-light">
+    <section id="experience" className="py-24 bg-secondary">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
           <div className="relative opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            <div className="aspect-[4/3] rounded-sm overflow-hidden">
+            <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-elegant">
               <img 
                 src={ambianceGarden} 
                 alt="Farida Lebanon Garden Terrace - Outdoor Dining Experience"
@@ -39,16 +39,16 @@ const ExperienceSection = () => {
               />
             </div>
             {/* Floating Card */}
-            <div className="absolute -bottom-8 -right-8 bg-secondary p-6 rounded-sm shadow-elegant max-w-xs hidden lg:block">
+            <div className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-lg shadow-elegant max-w-xs hidden lg:block">
               <div className="flex items-center gap-2 mb-2">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
+                  <Star key={i} className="w-4 h-4 fill-primary-foreground text-primary-foreground" />
                 ))}
               </div>
-              <p className="text-cream italic font-display text-lg">
+              <p className="text-primary-foreground italic font-display text-lg">
                 "A place that feels like Lebanon."
               </p>
-              <p className="text-cream-muted text-sm mt-2">— Loyal Guest</p>
+              <p className="text-primary-foreground/80 text-sm mt-2">— Loyal Guest</p>
             </div>
           </div>
 
@@ -62,7 +62,7 @@ const ExperienceSection = () => {
               <br />
               <span className="italic text-primary">A Destination.</span>
             </h2>
-            <p className="text-cream-muted text-lg mb-10 leading-relaxed">
+            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
               At Farida Lebanon, every detail is designed to transport you. 
               From the moment you enter, you're enveloped in warm Lebanese 
               hospitality, elegant ambiance, and the intoxicating aromas 
@@ -71,19 +71,19 @@ const ExperienceSection = () => {
 
             {/* Features Grid */}
             <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature, index) => (
+              {features.map((feature) => (
                 <div 
                   key={feature.title}
                   className="flex gap-4 items-start group"
                 >
-                  <div className="w-12 h-12 rounded-sm bg-muted flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center group-hover:bg-primary transition-colors duration-300 border border-border">
                     <feature.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
                   </div>
                   <div>
                     <h3 className="font-display text-xl text-foreground mb-1">
                       {feature.title}
                     </h3>
-                    <p className="text-cream-muted text-sm">
+                    <p className="text-muted-foreground text-sm">
                       {feature.description}
                     </p>
                   </div>
