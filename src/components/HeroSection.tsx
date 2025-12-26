@@ -35,8 +35,7 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-light text-white mb-6 leading-tight opacity-0 animate-fade-up delay-100">
             Authentic Lebanese
             <br />
-            Cuisine.{" "}
-            <span className="italic text-primary-foreground">Elevated.</span>
+            <span className="italic text-primary-foreground">Cuisine.</span>
           </h1>
 
           {/* Subheadline */}
