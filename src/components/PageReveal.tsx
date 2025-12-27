@@ -8,12 +8,12 @@ const PageReveal = () => {
     // Start reveal animation after a brief delay
     const revealTimer = setTimeout(() => {
       setIsRevealed(true);
-    }, 400);
+    }, 800);
 
     // Hide the overlay completely after animation
     const hideTimer = setTimeout(() => {
       setIsHidden(true);
-    }, 2000);
+    }, 5000);
 
     return () => {
       clearTimeout(revealTimer);
