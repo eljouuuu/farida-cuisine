@@ -1,5 +1,6 @@
 import { Users, Music, Star, Utensils } from "lucide-react";
 import ambianceGarden from "@/assets/ambiance-garden.jpg";
+import ScrollAnimatedSection from "@/components/ScrollAnimatedSection";
 
 const features = [
   {
@@ -30,30 +31,32 @@ const ExperienceSection = () => {
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Image Side */}
-          <div className="relative opacity-0 animate-fade-up" style={{ animationFillMode: 'forwards' }}>
-            <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-elegant">
-              <img 
-                src={ambianceGarden} 
-                alt="Farida Lebanon Garden Terrace - Outdoor Dining Experience"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Floating Card */}
-            <div className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-lg shadow-elegant max-w-xs hidden lg:block">
-              <div className="flex items-center gap-2 mb-2">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-primary-foreground text-primary-foreground" />
-                ))}
+          <ScrollAnimatedSection animation="slide-right">
+            <div className="relative">
+              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-elegant">
+                <img 
+                  src={ambianceGarden} 
+                  alt="Farida Lebanon Garden Terrace - Outdoor Dining Experience"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <p className="text-primary-foreground italic font-display text-lg">
-                "A place that feels like Lebanon."
-              </p>
-              <p className="text-primary-foreground/80 text-sm mt-2">— Loyal Guest</p>
+              {/* Floating Card */}
+              <div className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-lg shadow-elegant max-w-xs hidden lg:block">
+                <div className="flex items-center gap-2 mb-2">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-primary-foreground text-primary-foreground" />
+                  ))}
+                </div>
+                <p className="text-primary-foreground italic font-display text-lg">
+                  "A place that feels like Lebanon."
+                </p>
+                <p className="text-primary-foreground/80 text-sm mt-2">— Loyal Guest</p>
+              </div>
             </div>
-          </div>
+          </ScrollAnimatedSection>
 
           {/* Content Side */}
-          <div className="opacity-0 animate-fade-up delay-200" style={{ animationFillMode: 'forwards' }}>
+          <ScrollAnimatedSection animation="slide-left" delay={200}>
             <span className="text-primary uppercase tracking-[0.3em] text-sm font-medium mb-4 block">
               The Experience
             </span>
@@ -71,26 +74,29 @@ const ExperienceSection = () => {
 
             {/* Features Grid */}
             <div className="grid sm:grid-cols-2 gap-6">
-              {features.map((feature) => (
-                <div 
+              {features.map((feature, index) => (
+                <ScrollAnimatedSection 
                   key={feature.title}
-                  className="flex gap-4 items-start group"
+                  animation="fade-up"
+                  delay={300 + index * 100}
                 >
-                  <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center group-hover:bg-primary transition-colors duration-300 border border-border">
-                    <feature.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                  <div className="flex gap-4 items-start group">
+                    <div className="w-12 h-12 rounded-lg bg-background flex items-center justify-center group-hover:bg-primary transition-colors duration-300 border border-border">
+                      <feature.icon className="w-5 h-5 text-primary group-hover:text-primary-foreground transition-colors duration-300" />
+                    </div>
+                    <div>
+                      <h3 className="font-display text-xl text-foreground mb-1">
+                        {feature.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm">
+                        {feature.description}
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-display text-xl text-foreground mb-1">
-                      {feature.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
+                </ScrollAnimatedSection>
               ))}
             </div>
-          </div>
+          </ScrollAnimatedSection>
         </div>
       </div>
     </section>
