@@ -33,7 +33,7 @@ const ExperienceSection = () => {
           {/* Image Side */}
           <ScrollAnimatedSection animation="slide-right">
             <div className="relative">
-              <div className="aspect-[4/3] rounded-lg overflow-hidden shadow-elegant">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-elegant">
                 <img 
                   src={ambianceGarden} 
                   alt="Farida Lebanon Garden Terrace - Outdoor Dining Experience"
@@ -41,7 +41,7 @@ const ExperienceSection = () => {
                 />
               </div>
               {/* Floating Card */}
-              <div className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-lg shadow-elegant max-w-xs hidden lg:block">
+              <div className="absolute -bottom-8 -right-8 bg-primary p-6 rounded-2xl shadow-elegant max-w-xs hidden lg:block">
                 <div className="flex items-center gap-2 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-4 h-4 fill-primary-foreground text-primary-foreground" />

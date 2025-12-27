@@ -54,7 +54,7 @@ const SignatureDishes = () => {
               delay={index * 100}
             >
               <div 
-                className="group relative overflow-hidden bg-card rounded-lg border border-border h-full"
+                className="group relative overflow-hidden bg-card rounded-2xl border border-border h-full"
               >
                 {/* Image */}
                 <div className="aspect-square overflow-hidden">
