@@ -27,19 +27,19 @@ const PageReveal = () => {
     <div className="fixed inset-0 z-[100] pointer-events-none">
       {/* Left curtain */}
       <div
-        className={`absolute inset-y-0 left-0 w-1/2 bg-primary transition-transform duration-[2600ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute inset-y-0 left-0 w-1/2 bg-primary transition-transform duration-[5000ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           isRevealed ? "-translate-x-full" : "translate-x-0"
         }`}
       />
       {/* Right curtain */}
       <div
-        className={`absolute inset-y-0 right-0 w-1/2 bg-primary transition-transform duration-[2600ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute inset-y-0 right-0 w-1/2 bg-primary transition-transform duration-[5000ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           isRevealed ? "translate-x-full" : "translate-x-0"
         }`}
       />
       {/* Center logo/text */}
       <div
-        className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-1000 ${
+        className={`absolute inset-0 flex flex-col items-center justify-center transition-opacity duration-2000 ${
           isRevealed ? "opacity-0" : "opacity-100"
         }`}
       >
