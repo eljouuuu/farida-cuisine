@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Clock, MapPin } from "lucide-react";
+import ScrollAnimatedSection from "@/components/ScrollAnimatedSection";
 
 const CTASection = () => {
   return (
@@ -13,7 +14,7 @@ const CTASection = () => {
       />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-3xl mx-auto text-center">
+        <ScrollAnimatedSection className="max-w-3xl mx-auto text-center" animation="scale-in">
           <span className="text-primary-foreground/80 uppercase tracking-[0.3em] text-sm font-medium mb-4 block">
             Reserve Your Experience
           </span>
@@ -26,27 +27,31 @@ const CTASection = () => {
           </p>
 
           {/* Quick Info */}
-          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-10 text-primary-foreground/80">
-            <div className="flex items-center justify-center gap-2">
-              <Clock className="w-4 h-4 text-primary-foreground" />
-              <span className="text-sm">Open Daily: 12PM - 12AM</span>
+          <ScrollAnimatedSection delay={200}>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 mb-10 text-primary-foreground/80">
+              <div className="flex items-center justify-center gap-2">
+                <Clock className="w-4 h-4 text-primary-foreground" />
+                <span className="text-sm">Open Daily: 12PM - 12AM</span>
+              </div>
+              <div className="flex items-center justify-center gap-2">
+                <MapPin className="w-4 h-4 text-primary-foreground" />
+                <span className="text-sm">New Cairo, Egypt</span>
+              </div>
             </div>
-            <div className="flex items-center justify-center gap-2">
-              <MapPin className="w-4 h-4 text-primary-foreground" />
-              <span className="text-sm">New Cairo, Egypt</span>
-            </div>
-          </div>
+          </ScrollAnimatedSection>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90 font-semibold uppercase tracking-widest">
-              Book Your Table
-            </Button>
-            <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary font-semibold uppercase tracking-widest">
-              Call Now
-            </Button>
-          </div>
-        </div>
+          <ScrollAnimatedSection delay={300}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90 font-semibold uppercase tracking-widest">
+                Book Your Table
+              </Button>
+              <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary font-semibold uppercase tracking-widest">
+                Call Now
+              </Button>
+            </div>
+          </ScrollAnimatedSection>
+        </ScrollAnimatedSection>
       </div>
     </section>
   );

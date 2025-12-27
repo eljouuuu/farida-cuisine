@@ -6,6 +6,7 @@ import ExperienceSection from "@/components/ExperienceSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import PageReveal from "@/components/PageReveal";
 
 const Index = () => {
   return (
@@ -52,6 +53,8 @@ const Index = () => {
         </script>
       </Helmet>
 
+      <PageReveal />
+      
       <main className="bg-background min-h-screen">
         <Navigation />
         <HeroSection />
