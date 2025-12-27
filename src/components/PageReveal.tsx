@@ -8,12 +8,12 @@ const PageReveal = () => {
     // Start reveal animation after a brief delay
     const revealTimer = setTimeout(() => {
       setIsRevealed(true);
-    }, 100);
+    }, 400);
 
     // Hide the overlay completely after animation
     const hideTimer = setTimeout(() => {
       setIsHidden(true);
-    }, 1200);
+    }, 2000);
 
     return () => {
       clearTimeout(revealTimer);
@@ -27,13 +27,13 @@ const PageReveal = () => {
     <div className="fixed inset-0 z-[100] pointer-events-none">
       {/* Left curtain */}
       <div
-        className={`absolute inset-y-0 left-0 w-1/2 bg-primary transition-transform duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute inset-y-0 left-0 w-1/2 bg-primary transition-transform duration-[1400ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           isRevealed ? "-translate-x-full" : "translate-x-0"
         }`}
       />
       {/* Right curtain */}
       <div
-        className={`absolute inset-y-0 right-0 w-1/2 bg-primary transition-transform duration-1000 ease-[cubic-bezier(0.76,0,0.24,1)] ${
+        className={`absolute inset-y-0 right-0 w-1/2 bg-primary transition-transform duration-[1400ms] ease-[cubic-bezier(0.76,0,0.24,1)] ${
           isRevealed ? "translate-x-full" : "translate-x-0"
         }`}
       />
