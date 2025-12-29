@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Star } from "lucide-react";
 import heroImage from "@/assets/hero-restaurant.jpg";
 
 const HeroSection = () => {
+  const navigate = useNavigate();
   const [hasAnimated, setHasAnimated] = useState(false);
 
   useEffect(() => {
@@ -65,7 +67,7 @@ const HeroSection = () => {
 
           {/* CTAs */}
           <div className={`flex flex-col sm:flex-row gap-4 mb-12 ${getAnimationClass("3100ms")}`}>
-            <Button variant="gold" size="xl">
+            <Button variant="gold" size="xl" onClick={() => navigate("/booking")}>
               Book Your Table
             </Button>
             <Button variant="goldOutline" size="xl" className="border-white text-white hover:bg-white hover:text-primary">

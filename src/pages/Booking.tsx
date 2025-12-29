@@ -78,11 +78,11 @@ const Booking = () => {
           <div className="absolute bottom-4 left-4 w-16 h-16 border-l-2 border-b-2 border-primary-foreground/20" />
           <div className="absolute bottom-4 right-4 w-16 h-16 border-r-2 border-b-2 border-primary-foreground/20" />
           
-          <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="container mx-auto px-4 text-center relative z-10 pt-12 md:pt-0">
             <Button
               variant="ghost"
               onClick={() => navigate("/")}
-              className="absolute left-4 top-0 text-primary-foreground hover:bg-primary-foreground/10"
+              className="mb-6 md:mb-0 md:absolute md:left-4 md:top-0 text-primary-foreground hover:bg-primary-foreground/10"
             >
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back
