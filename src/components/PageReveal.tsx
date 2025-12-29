@@ -3,8 +3,20 @@ import { useEffect, useState } from "react";
 const PageReveal = () => {
   const [isRevealed, setIsRevealed] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
+  const [hasSeenReveal, setHasSeenReveal] = useState(false);
 
   useEffect(() => {
+    // Check if user has already seen the reveal
+    const seen = sessionStorage.getItem("hasSeenPageReveal");
+    if (seen) {
+      setHasSeenReveal(true);
+      setIsHidden(true);
+      return;
+    }
+
+    // Mark as seen
+    sessionStorage.setItem("hasSeenPageReveal", "true");
+
     // Start reveal animation after a brief delay
     const revealTimer = setTimeout(() => {
       setIsRevealed(true);
@@ -21,7 +33,7 @@ const PageReveal = () => {
     };
   }, []);
 
-  if (isHidden) return null;
+  if (isHidden || hasSeenReveal) return null;
 
   return (
     <div className="fixed inset-0 z-[100] pointer-events-none">
