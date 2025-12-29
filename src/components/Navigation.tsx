@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { Phone, X, Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -70,7 +72,7 @@ const Navigation = () => {
             }`}>
               <Phone className="w-4 h-4" />
             </a>
-            <Button variant="gold" size="lg">
+            <Button variant="gold" size="lg" onClick={() => navigate("/booking")}>
               Book Your Table
             </Button>
           </div>
@@ -125,7 +127,7 @@ const Navigation = () => {
                   <span>Call Us</span>
                 </a>
               </div>
-              <Button variant="gold" size="lg" className="w-full mt-2">
+              <Button variant="gold" size="lg" className="w-full mt-2" onClick={() => { setIsOpen(false); navigate("/booking"); }}>
                 Book Your Table
               </Button>
             </div>
