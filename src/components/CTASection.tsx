@@ -46,9 +46,17 @@ const CTASection = () => {
               <Button variant="secondary" size="xl" className="bg-white text-primary hover:bg-white/90 font-semibold uppercase tracking-widest">
                 Book Your Table
               </Button>
-              <Button variant="outline" size="xl" className="border-white text-white hover:bg-white hover:text-primary font-semibold uppercase tracking-widest">
-                Call Now
-              </Button>
+<Button
+  asChild
+  variant="outline"
+  size="xl"
+  className="border-white text-white hover:bg-white hover:text-primary font-semibold uppercase tracking-widest"
+>
+  <a href="tel:+201234567890">
+    Call Now
+  </a>
+</Button>
+
             </div>
           </ScrollAnimatedSection>
         </ScrollAnimatedSection>
